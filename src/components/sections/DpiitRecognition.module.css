@@ -1,0 +1,183 @@
+.section {
+  background: var(--color-bg-light);
+  padding: var(--space-section) 0;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  box-shadow: var(--shadow-card);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%);
+}
+
+/* Left */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.govtBadge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.govtFlag {
+  font-size: 2rem;
+}
+
+.govtTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+}
+
+.govtSub {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.headline {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.detailRow {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.detailLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.detailValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cert {
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+}
+
+.disclaimer {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  line-height: 1.6;
+  padding: 12px 14px;
+  background: rgba(0,0,0,0.02);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+/* Right — certificate */
+.right {
+  display: flex;
+  justify-content: center;
+}
+
+.certPlaceholder {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3/4;
+  border: 2px dashed rgba(79,70,229,0.2);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 24px;
+}
+
+.certHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.certFlag {
+  font-size: 2rem;
+}
+
+.certHeader p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.certSmall {
+  font-size: 0.65rem !important;
+  color: var(--color-text-muted) !important;
+  font-family: var(--font-heading);
+  letter-spacing: 0.06em;
+}
+
+.certNote {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 32px;
+  }
+  .right {
+    display: none;
+  }
+}

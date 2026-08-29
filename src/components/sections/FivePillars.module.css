@@ -1,0 +1,192 @@
+.section {
+  background: var(--color-bg-dark);
+  padding: var(--space-section) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(79,70,229,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.headline {
+  font-size: var(--text-h2);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: white;
+  line-height: 1.1;
+}
+
+/* Cards row */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  position: relative;
+}
+
+.card {
+  background: var(--color-bg-dark-card);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-xl);
+  padding: 28px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  position: relative;
+  transition: all var(--dur-normal) var(--ease-out-expo);
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: rgba(79,70,229,0.35);
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.06);
+}
+
+/* Connector */
+.connector {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.connectorLine {
+  display: flex;
+  align-items: center;
+  width: 32px;
+}
+
+.connectorArrow {
+  font-size: 1rem;
+  color: rgba(79,70,229,0.5);
+  display: none; /* handled in flow bar; shown at larger screens */
+}
+
+/* Icon */
+.iconWrap {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+}
+
+.icon {
+  font-size: 1.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.iconGlow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Step number */
+.step {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.2);
+  font-family: var(--font-heading);
+}
+
+.name {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: white;
+  font-family: var(--font-heading);
+}
+
+.desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+
+/* Flow bar */
+.flowBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+  padding: 16px 28px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-full);
+  transform-origin: left;
+}
+
+.flowItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flowItem span:first-child {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  background: var(--gradient-brand-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.flowArrow {
+  font-size: 0.7rem;
+  color: rgba(79,70,229,0.5) !important;
+  -webkit-text-fill-color: rgba(79,70,229,0.5) !important;
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,177 @@
+.section {
+  background: var(--color-bg-dark);
+  padding: var(--space-section) 0;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.headline {
+  font-size: var(--text-h2);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: white;
+}
+
+.subtext {
+  font-size: 1rem;
+  color: var(--color-text-light-muted);
+  line-height: 1.75;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Milestones */
+.milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.milestone {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-md);
+  transition: background var(--dur-fast);
+}
+
+.milestone:hover {
+  background: rgba(79,70,229,0.08);
+  border-color: rgba(79,70,229,0.2);
+}
+
+.checkmark {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(16,185,129,0.15);
+  color: #6ee7b7;
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.milestoneText {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+}
+
+/* Stage track */
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-xl);
+}
+
+.stagesLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.stageTrack {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.stageItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  min-width: 100px;
+}
+
+.stageDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.stageDotActive {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: 0 0 12px rgba(79,70,229,0.6);
+}
+
+.stageLine {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.08);
+  z-index: 0;
+}
+
+.stageLineActive {
+  background: rgba(79,70,229,0.4);
+}
+
+.stageLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.stageLabelActive {
+  color: white;
+}
+
+.currentBadge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6ee7b7;
+  background: rgba(16,185,129,0.15);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-top: 4px;
+}
+
+@media (max-width: 560px) {
+  .stageTrack {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .stageLine {
+    display: none;
+  }
+}

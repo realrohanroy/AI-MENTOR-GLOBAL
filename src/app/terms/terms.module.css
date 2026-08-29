@@ -1,0 +1,65 @@
+/* Re-use same styles as privacy-policy/legal.module.css */
+.page {
+  padding: 140px 0 80px;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+}
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.headline {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.updated {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
+}
+
+.notice {
+  background: rgba(79,70,229,0.06);
+  border: 1px solid rgba(79,70,229,0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.notice a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.section {
+  margin-bottom: 36px;
+}
+
+.section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.section a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
