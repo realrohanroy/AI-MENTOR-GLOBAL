@@ -27,20 +27,18 @@ export default function Footer() {
         {/* Brand column */}
         <div className={styles.brand}>
           <div className={styles.logo}>
-            <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-              <circle cx="16" cy="16" r="16" fill="url(#flg)" />
-              <path d="M16 8L20 14H12L16 8Z" fill="white" opacity="0.9"/>
-              <circle cx="16" cy="19" r="4" fill="white" opacity="0.95"/>
-              <defs>
-                <linearGradient id="flg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#2563eb"/>
-                  <stop offset="0.5" stopColor="#7c3aed"/>
-                  <stop offset="1" stopColor="#4f46e5"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img
+              src="/logo_icon.png"
+              alt="AI Mentor Global icon"
+              width={44}
+              height={44}
+              style={{ display: "block", objectFit: "contain", flexShrink: 0 }}
+            />
             <div>
-              <div className={styles.logoMain}>AI Mentor Global</div>
+              <div className={styles.logoText}>
+                <span className={styles.logoMain}>AI Mentor</span>
+                <span className={styles.logoSub}>Global</span>
+              </div>
               <div className={styles.logoTagline}>A brand by AI Mentor Private Limited</div>
             </div>
           </div>

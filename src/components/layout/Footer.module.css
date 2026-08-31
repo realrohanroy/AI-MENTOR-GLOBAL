@@ -24,10 +24,25 @@
   gap: 12px;
 }
 
+.logoText {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
+}
+
 .logoMain {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.logoSub {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
   color: white;
   letter-spacing: -0.02em;
 }

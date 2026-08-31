@@ -29,18 +29,13 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className={styles.logo}>
             <div className={styles.logoMark}>
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="16" fill="url(#lg)" />
-                <path d="M16 8L20 14H12L16 8Z" fill="white" opacity="0.9"/>
-                <circle cx="16" cy="19" r="4" fill="white" opacity="0.95"/>
-                <defs>
-                  <linearGradient id="lg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#2563eb"/>
-                    <stop offset="0.5" stopColor="#7c3aed"/>
-                    <stop offset="1" stopColor="#4f46e5"/>
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img
+                src="/logo_icon.png"
+                alt="AI Mentor Global icon"
+                width={38}
+                height={38}
+                style={{ display: "block", objectFit: "contain" }}
+              />
             </div>
             <div className={styles.logoText}>
               <span className={styles.logoMain}>AI Mentor</span>
@@ -58,8 +53,8 @@ export default function Navbar() {
           </nav>
 
           {/* CTA */}
-          <a href="#early-access" className={`btn btn-primary ${styles.ctaBtn}`}>
-            Join Early Access
+          <a href="https://identity-suite-ai.lovable.app/" target="_blank" rel="noopener noreferrer" className={styles.havenLink}>
+            Your Digital Haven <span>→</span>
           </a>
 
           {/* Mobile toggle */}
@@ -88,11 +83,13 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#early-access"
-            className={`btn btn-primary ${styles.mobileCta}`}
+            href="https://identity-suite-ai.lovable.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.mobileHavenLink}
             onClick={() => setMenuOpen(false)}
           >
-            Join Early Access
+            Your Digital Haven <span>→</span>
           </a>
         </nav>
       </div>
