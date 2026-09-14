@@ -17,26 +17,37 @@ export default function Founder() {
           transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
         >
           <div className={styles.photoCol}>
-            {/* Photo placeholder */}
             <div className={styles.photoWrap}>
-              <div className={styles.photoPlaceholder}>
-                <span className={styles.photoInitials}>UM</span>
-                <p className={styles.photoNote}>Founder photograph<br />to be provided</p>
-              </div>
+              <img 
+                src="/utkarsh-mehta.jpeg" 
+                alt="Utkarsh Mehta" 
+                className={styles.photoImage} 
+              />
               <div className={styles.photoGlow} aria-hidden="true" />
             </div>
             <div className={styles.nameBlock}>
               <p className={styles.name}>Utkarsh Mehta</p>
               <p className={styles.role}>Founder &amp; Director</p>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.linkedin}
-                aria-label="Utkarsh Mehta on LinkedIn"
-              >
-                LinkedIn →
-              </a>
+              <div className={styles.socialLinks}>
+                <a
+                  href="https://www.linkedin.com/in/utkarsh-mehta-ab381213/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label="Utkarsh Mehta on LinkedIn"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://x.com/UTKARSHMEHTA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label="Utkarsh Mehta on X"
+                >
+                  X (Twitter)
+                </a>
+              </div>
             </div>
           </div>
 
@@ -62,7 +73,7 @@ export default function Founder() {
 
             <p className={styles.linkedinCta}>
               Longer professional history available on{" "}
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
+              <a href="https://www.linkedin.com/in/utkarsh-mehta-ab381213/" target="_blank" rel="noopener noreferrer" className={styles.link}>
                 LinkedIn
               </a>.
             </p>

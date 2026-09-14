@@ -2,12 +2,12 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 
 const navLinks = [
-  { href: "#hero", label: "About" },
+  { href: "/about", label: "About Us" },
   { href: "#product", label: "Product" },
   { href: "#individuals", label: "Individuals" },
   { href: "#families", label: "Families" },
   { href: "#corporates", label: "Corporates" },
-  { href: "#security", label: "Security & Privacy" },
+  { href: "/security", label: "Security & Privacy" },
   { href: "/contact", label: "Contact" },
 ];
 

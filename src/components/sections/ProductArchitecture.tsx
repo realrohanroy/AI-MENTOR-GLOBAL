@@ -5,17 +5,14 @@ import styles from "./ProductArchitecture.module.css";
 
 const activeModules = [
   {
-    id: "MF-01",
     title: "Digital Identity & Master Profile",
     items: ["Passport", "Aadhaar", "PAN", "Driving Licence", "Visas", "Residence Permits", "Other Identity Records"],
   },
   {
-    id: "MF-02",
     title: "Family & Relationships",
     items: ["Family Profiles", "Relationships", "Nominees", "Emergency Contacts", "Important Dates", "Family Documents"],
   },
   {
-    id: "MF-03",
     title: "Education, Knowledge & Skills",
     items: ["Academic Records", "Qualifications", "Certifications", "Skills", "Languages", "Training", "Achievements"],
   },
@@ -62,8 +59,7 @@ export default function ProductArchitecture() {
               transition={{ delay: i * 0.15, duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
             >
               <div className={styles.moduleHeader}>
-                <span className={styles.moduleId}>{mod.id}</span>
-                <span className={`tag tag-accent ${styles.liveBadge}`}>Active</span>
+                <span className={`tag tag-accent ${styles.liveBadge}`}>Available Now</span>
               </div>
               <h3 className={styles.moduleTitle}>{mod.title}</h3>
               <div className={styles.moduleItems}>
@@ -75,24 +71,36 @@ export default function ProductArchitecture() {
           ))}
         </div>
 
-        {/* Planned modules */}
+        {/* Planned modules (Marquee) */}
         <motion.div
           className={styles.plannedSection}
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6, duration: 0.7 }}
         >
-          <p className={styles.plannedLabel}>
-            And progressively much more — planned for future releases:
-          </p>
-          <div className={styles.plannedGrid}>
-            {plannedModules.map((mod) => (
-              <div key={mod} className={styles.plannedCard}>
-                <span className={`tag tag-planned`}>Planned</span>
-                <p className={styles.plannedName}>{mod}</p>
+          <h3 className={styles.comingSoonTitle}>Coming Soon</h3>
+          
+          <div className={styles.marqueeContainer}>
+            <div className={styles.marqueeTrack}>
+              {/* Original Set */}
+              <div className={styles.marqueeContent}>
+                {plannedModules.map((mod) => (
+                  <div key={mod} className={styles.plannedCard}>
+                    <p className={styles.plannedName}>{mod}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+              {/* Duplicated Set for infinite loop */}
+              <div className={styles.marqueeContent} aria-hidden="true">
+                {plannedModules.map((mod) => (
+                  <div key={`${mod}-dup`} className={styles.plannedCard}>
+                    <p className={styles.plannedName}>{mod}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+
           <p className={styles.plannedNote}>
             Future modules represent planned product development and are not yet commercially available.
           </p>

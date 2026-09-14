@@ -32,7 +32,7 @@ export default function TheDifference() {
           </p>
           <div className={styles.divider} />
           <p className={styles.line2}>
-            AI Mentor Global aims to intelligently manage<br />
+            AI Mentor Global is designed to intelligently manage<br />
             the information <span className="gradient-text-light">inside</span> them.
           </p>
         </motion.div>
@@ -53,7 +53,7 @@ export default function TheDifference() {
           transition={{ delay: 0.65, duration: 0.6 }}
         >
           <a href="#early-access" className="btn btn-primary btn-lg">
-            Be Among the First
+            Join Early Access
           </a>
           <a href="#product" className="btn btn-outline-light btn-lg">
             Learn More

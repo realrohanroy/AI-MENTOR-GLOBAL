@@ -1,0 +1,479 @@
+/* ============================================================
+   AIRA EMERGENCY SECTION
+   ============================================================ */
+
+.section {
+  background: var(--color-bg-dark);
+  padding: var(--space-section) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background radial glow */
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse at center, rgba(124,58,237,0.12) 0%, rgba(79,70,229,0.05) 40%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGlowRed {
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(239,68,68,0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── TOP LABEL ─────────────────────────────────────────── */
+.topLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.emergencyPulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: emergencyBlink 1.2s ease-in-out infinite;
+}
+
+@keyframes emergencyBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.topLabelText {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(239,68,68,0.85);
+}
+
+/* ── HEADLINE ───────────────────────────────────────────── */
+.headline {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 760px;
+  margin: 0 auto 12px;
+}
+
+.sub {
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  max-width: 580px;
+  margin: 0 auto 56px;
+  line-height: 1.7;
+}
+
+/* ── MAIN LAYOUT ────────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* ── LEFT — AIRA VOICE DEMO ─────────────────────────────── */
+.voiceCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+
+
+/* Mic Button */
+.micWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ripple1, .ripple2, .ripple3 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(124,58,237,0.35);
+  animation: rippleOut 2.4s ease-out infinite;
+}
+
+.ripple1 { width: 100px; height: 100px; animation-delay: 0s; }
+.ripple2 { width: 140px; height: 140px; animation-delay: 0.4s; }
+.ripple3 { width: 180px; height: 180px; animation-delay: 0.8s; }
+
+@keyframes rippleOut {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+.micBtn {
+  position: relative;
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 40px rgba(79,70,229,0.5), 0 0 80px rgba(79,70,229,0.2);
+  transition: transform 0.2s var(--ease-spring), box-shadow 0.2s;
+}
+
+.micBtn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 56px rgba(79,70,229,0.7), 0 0 100px rgba(79,70,229,0.3);
+}
+
+.micBtn:active {
+  transform: scale(0.97);
+}
+
+.micActive {
+  animation: micPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 40px rgba(79,70,229,0.5), 0 0 80px rgba(79,70,229,0.2); }
+  50% { box-shadow: 0 0 60px rgba(124,58,237,0.8), 0 0 100px rgba(124,58,237,0.3); }
+}
+
+/* Aira voice bar */
+.airaBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.airaName {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.voiceBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 24px;
+}
+
+.bar {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--gradient-brand);
+  transform-origin: bottom;
+}
+
+.barAnimated {
+  animation: barBounce 0.8s ease-in-out infinite alternate;
+}
+
+.bar:nth-child(1) { height: 8px; animation-delay: 0s; }
+.bar:nth-child(2) { height: 16px; animation-delay: 0.1s; }
+.bar:nth-child(3) { height: 22px; animation-delay: 0.2s; }
+.bar:nth-child(4) { height: 14px; animation-delay: 0.15s; }
+.bar:nth-child(5) { height: 20px; animation-delay: 0.05s; }
+.bar:nth-child(6) { height: 10px; animation-delay: 0.25s; }
+.bar:nth-child(7) { height: 18px; animation-delay: 0.1s; }
+
+@keyframes barBounce {
+  from { transform: scaleY(0.3); opacity: 0.4; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+/* Clean hero quote */
+.heroQuote {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 420px;
+  margin-top: 16px;
+}
+
+.heroQuote em {
+  font-style: italic;
+  background: var(--gradient-brand-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── RIGHT — EMERGENCY BRIEF CARD ───────────────────────── */
+.briefCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.briefCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(124,58,237,0.12);
+}
+
+.briefHeader {
+  background: linear-gradient(135deg, rgba(239,68,68,0.15) 0%, rgba(124,58,237,0.12) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.briefIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(239,68,68,0.2);
+  border: 1px solid rgba(239,68,68,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.briefHeaderText h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.briefHeaderText p {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 2px;
+}
+
+.briefHeaderBadge {
+  margin-left: auto;
+  padding: 4px 10px;
+  background: rgba(239,68,68,0.15);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ef4444;
+}
+
+.briefBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.briefSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.briefSectionTitle {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.briefSectionContent {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  padding-left: 10px;
+  border-left: 2px solid rgba(79,70,229,0.4);
+}
+
+.briefSectionContent span {
+  display: block;
+}
+
+.briefDivider {
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+}
+
+.briefFooter {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.briefFooterNote {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.5;
+}
+
+.briefShareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--gradient-brand);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(79,70,229,0.3);
+}
+
+.briefShareBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(79,70,229,0.5);
+}
+
+.btnWaveform {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 4px;
+  height: 12px;
+}
+
+.waveBar {
+  width: 2px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 2px;
+  animation: waveBounce 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes waveBounce {
+  from { height: 30%; opacity: 0.5; }
+  to { height: 100%; opacity: 1; }
+}
+
+/* Timer chip below card */
+.timerChip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+}
+
+.timerDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: timerBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes timerBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.timerText {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+
+.timerText strong {
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* ── FEATURE PILLS ──────────────────────────────────────── */
+.featurePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.featurePill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.featurePillDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  flex-shrink: 0;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .briefCol {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .headline {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+  .featurePills {
+    margin-top: 40px;
+  }
+  .briefCard {
+    border-radius: var(--radius-lg);
+  }
+}

@@ -84,18 +84,9 @@ export default function Solution() {
               <div className={styles.aiBlock}>
                 <div className={styles.aiHeader}>
                   <div className={styles.aiLogo}>
-                    <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
-                      <circle cx="16" cy="16" r="16" fill="url(#slg)" />
-                      <path d="M16 8L20 14H12L16 8Z" fill="white" opacity="0.9"/>
-                      <circle cx="16" cy="19" r="4" fill="white" opacity="0.95"/>
-                      <defs>
-                        <linearGradient id="slg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-                          <stop stopColor="#2563eb"/><stop offset="0.5" stopColor="#7c3aed"/><stop offset="1" stopColor="#4f46e5"/>
-                        </linearGradient>
-                      </defs>
-                    </svg>
+                    <img src="/logo_icon.png" alt="Aira" width={18} height={18} style={{ display: "block", objectFit: "contain" }} />
                   </div>
-                  <span>AI Mentor</span>
+                  <span>Aira</span>
                 </div>
                 <p className={styles.aiMsg}>
                   <TypewriterText text={ai} active={inView} />

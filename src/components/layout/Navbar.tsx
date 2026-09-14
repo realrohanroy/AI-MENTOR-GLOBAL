@@ -1,10 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const navLinks = [
+  { href: "/about", label: "About Us" },
   { href: "#product", label: "Product" },
   { href: "#individuals", label: "Individuals" },
   { href: "#families", label: "Families" },
@@ -52,6 +53,16 @@ export default function Navbar() {
             ))}
           </nav>
 
+          {/* Desktop Language Selector */}
+          <div className={styles.langWrapper}>
+            <select aria-label="Select preferred language" className={styles.langSelect} defaultValue="en">
+              <option value="en">EN</option>
+              <option value="hi">HI</option>
+              <option value="gu">GU</option>
+            </select>
+            <Globe size={14} className={styles.langIcon} />
+          </div>
+
           {/* CTA */}
           <a href="https://identity-suite-ai.lovable.app/" target="_blank" rel="noopener noreferrer" className={styles.havenLink}>
             Your Digital Haven <span>→</span>
@@ -91,6 +102,15 @@ export default function Navbar() {
           >
             Your Digital Haven <span>→</span>
           </a>
+
+          {/* Mobile Language Selector */}
+          <div className={styles.mobileLangWrapper}>
+            <select aria-label="Select preferred language" className={styles.mobileLangSelect} defaultValue="en">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+              <option value="gu">ગુજરાતી</option>
+            </select>
+          </div>
         </nav>
       </div>
     </>

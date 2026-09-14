@@ -83,6 +83,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -337,7 +338,9 @@ button {
    ============================================================ */
 @media (max-width: 768px) {
   :root {
-    --space-section: 64px;
-    --space-content: 32px;
+    --space-section: 48px;
+    --space-content: 24px;
+    --text-hero: clamp(2.25rem, 5vw, 3rem);
+    --text-h2: clamp(1.75rem, 4vw, 2.25rem);
   }
 }

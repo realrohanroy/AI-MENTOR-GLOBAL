@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
+import AiraEmergency from "@/components/sections/AiraEmergency";
 import Problem from "@/components/sections/Problem";
 import Solution from "@/components/sections/Solution";
 import FivePillars from "@/components/sections/FivePillars";
@@ -21,6 +22,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <AiraEmergency />
         <Problem />
         <Solution />
         <FivePillars />

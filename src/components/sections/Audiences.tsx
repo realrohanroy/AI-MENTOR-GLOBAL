@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { User, Users, Building2 } from "lucide-react";
 import styles from "./Audiences.module.css";
 
 const audiences = [
@@ -15,7 +16,7 @@ const audiences = [
       "Finance", "Property", "Taxation", "Legal",
       "Employment", "Travel", "Personal Records",
     ],
-    emoji: "👤",
+    icon: User,
     gradient: "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)",
   },
   {
@@ -28,7 +29,7 @@ const audiences = [
       "Family Profiles", "Relationships", "Nominees",
       "Emergency Contacts", "Important Dates", "Family Documents",
     ],
-    emoji: "👨‍👩‍👧‍👦",
+    icon: Users,
     gradient: "linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)",
   },
   {
@@ -42,7 +43,7 @@ const audiences = [
       "Compliance", "Legal", "Finance",
       "Projects", "Institutional Knowledge",
     ],
-    emoji: "🏢",
+    icon: Building2,
     gradient: "linear-gradient(135deg, #4f46e5 0%, #2563eb 100%)",
   },
 ];
@@ -78,7 +79,7 @@ export default function Audiences() {
               aria-controls={`panel-${a.id}`}
               id={`tab-${a.id}`}
             >
-              <span>{a.emoji}</span>
+              <span><a.icon size={18} /></span>
               {a.title}
             </button>
           ))}
@@ -99,12 +100,12 @@ export default function Audiences() {
             >
               <div className={styles.panelLeft}>
                 <div className={styles.emojiWrap} style={{ background: a.gradient }}>
-                  <span className={styles.bigEmoji}>{a.emoji}</span>
+                  <a.icon size={48} className={styles.bigIcon} color="#ffffff" strokeWidth={1.5} />
                 </div>
                 <h3 className={styles.panelTitle}>{a.headline}</h3>
                 <p className={styles.panelDesc}>{a.description}</p>
                 <a href="#early-access" className="btn btn-primary">
-                  Get Early Access
+                  Join Early Access
                 </a>
               </div>
               <div className={styles.panelRight}>

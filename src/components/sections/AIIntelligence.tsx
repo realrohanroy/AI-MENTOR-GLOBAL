@@ -87,7 +87,7 @@ export default function AIIntelligence() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.7, duration: 0.6 }}
         >
-          <p className={styles.capLabel}>Planned AI capabilities:</p>
+          <p className={styles.capLabel}>Coming Soon:</p>
           <div className={styles.capTags}>
             {capabilities.map((cap) => (
               <span key={cap} className={styles.capTag}>{cap}</span>
