@@ -52,7 +52,7 @@ export default function ProductArchitecture() {
         <div className={styles.activeGrid}>
           {activeModules.map((mod, i) => (
             <motion.div
-              key={mod.id}
+              key={i}
               className={styles.moduleCard}
               initial={{ opacity: 0, y: 32 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
