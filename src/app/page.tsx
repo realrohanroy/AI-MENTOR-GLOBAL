@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
+import AiraVideo from "@/components/sections/AiraVideo";
 import AiraEmergency from "@/components/sections/AiraEmergency";
 import Problem from "@/components/sections/Problem";
 import Solution from "@/components/sections/Solution";
@@ -22,6 +23,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <AiraVideo />
         <AiraEmergency />
         <Problem />
         <Solution />

@@ -200,3 +200,20 @@
     align-items: flex-start;
   }
 }
+
+.craftedBy {
+  display: inline-block;
+  margin-left: 6px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.smeLink {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.smeLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

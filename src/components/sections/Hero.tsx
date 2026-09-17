@@ -45,7 +45,7 @@ export default function Hero() {
             <a href="#early-access" className="btn btn-primary">
               Join Early Access
             </a>
-            <a href="#how-it-works" className={styles.btnText}>
+            <a href="#aira-intro" className={styles.btnText}>
               See how it works <span className={styles.btnIcon}>↘</span>
             </a>
           </div>

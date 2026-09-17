@@ -92,7 +92,10 @@ export default function Footer() {
         <div className="container">
           <div className={styles.bottomInner}>
             <p className={styles.copyright}>
-              © 2026 AI Mentor Private Limited. All rights reserved.
+              © 2026 AI Mentor Private Limited. All rights reserved. 
+              <span className={styles.craftedBy}>
+                | Crafted with ❤️ by <a href="https://smeexperts.in" target="_blank" rel="noopener noreferrer" className={styles.smeLink}>SME EXPERTS</a>
+              </span>
             </p>
             <div className={styles.legalLinks}>
               {legalLinks.map((link) => (
