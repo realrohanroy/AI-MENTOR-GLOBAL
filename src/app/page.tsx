@@ -16,6 +16,7 @@ import Vision from "@/components/sections/Vision";
 import Founder from "@/components/sections/Founder";
 import RoadmapStatus from "@/components/sections/RoadmapStatus";
 import EarlyAccess from "@/components/sections/EarlyAccess";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
         <Founder />
         <RoadmapStatus />
         <EarlyAccess />
+        <ContactSection />
       </main>
       <Footer />
     </>

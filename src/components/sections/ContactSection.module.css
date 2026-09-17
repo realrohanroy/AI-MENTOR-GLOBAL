@@ -1,6 +1,5 @@
-.page {
-  padding: 140px 0 var(--space-section);
-  min-height: 100vh;
+.section {
+  padding: var(--space-section) 0;
   background: var(--color-bg-light);
 }
 

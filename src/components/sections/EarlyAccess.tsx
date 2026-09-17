@@ -14,11 +14,34 @@ export default function EarlyAccess() {
     e.preventDefault();
     if (!form.name || !form.email || !form.mobile || !form.type) return;
     setLoading(true);
-    // Netlify Forms: real submission handled by Netlify on deployment
-    // For local dev, simulate success after 1.5s
-    await new Promise((r) => setTimeout(r, 1500));
-    setLoading(false);
-    setSubmitted(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "9fb48966-35ad-40a7-a339-824936f6f4a2",
+          subject: "New Early Access Registration - AI Mentor Global",
+          from_name: "AI Mentor Global Website",
+          name: form.name,
+          email: form.email,
+          mobile: form.mobile,
+          interested_as: form.type,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error("Form submission failed", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -76,20 +99,10 @@ export default function EarlyAccess() {
             </div>
           ) : (
             <form
-              name="early-access"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className={styles.form}
             >
-              <input type="hidden" name="form-name" value="early-access" />
-              <p className={styles.hiddenField}>
-                <label>
-                  Do not fill this out:{" "}
-                  <input name="bot-field" tabIndex={-1} autoComplete="off" />
-                </label>
-              </p>
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
 
               <h3 className={styles.formTitle}>JOIN EARLY ACCESS</h3>
 

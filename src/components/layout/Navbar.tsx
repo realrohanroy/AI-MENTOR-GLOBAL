@@ -5,12 +5,9 @@ import { Menu, X, Globe } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const navLinks = [
-  { href: "/about", label: "About Us" },
+  { href: "#vision", label: "About Us" },
   { href: "#product", label: "Product" },
-  { href: "#individuals", label: "Individuals" },
-  { href: "#families", label: "Families" },
-  { href: "#corporates", label: "Corporates" },
-  { href: "/contact", label: "Contact" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
