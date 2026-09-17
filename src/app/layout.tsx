@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.aimentorglobal.com"),
   title: "AI Mentor Global — Your Life. Your Information. Intelligently Managed.",
   description:
     "AI Mentor Global is an AI-powered digital information management platform helping Individuals, Families and Corporates organise, preserve, manage and securely share their important information.",
