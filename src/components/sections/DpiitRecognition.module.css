@@ -118,57 +118,23 @@
   justify-content: center;
 }
 
-.certPlaceholder {
+.imageWrapper {
   width: 100%;
   max-width: 320px;
-  aspect-ratio: 3/4;
-  border: 2px dashed rgba(79,70,229,0.2);
-  border-radius: var(--radius-lg);
-  background: var(--color-bg-light);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 4px solid white;
 }
 
-.certInner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  text-align: center;
-  padding: 24px;
-}
-
-.certHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.certFlag {
-  font-size: 2rem;
-}
-
-.certHeader p {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--color-text-secondary);
-}
-
-.certSmall {
-  font-size: 0.65rem !important;
-  color: var(--color-text-muted) !important;
-  font-family: var(--font-heading);
-  letter-spacing: 0.06em;
-}
-
-.certNote {
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
-  font-style: italic;
-  text-align: center;
-  line-height: 1.5;
+.certImage {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -178,6 +144,7 @@
     gap: 32px;
   }
   .right {
-    display: none;
+    display: flex;
+    width: 100%;
   }
 }

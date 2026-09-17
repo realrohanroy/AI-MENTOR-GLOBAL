@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import styles from "./DpiitRecognition.module.css";
 
@@ -48,18 +49,14 @@ export default function DpiitRecognition() {
             </p>
           </div>
           <div className={styles.right}>
-            {/* Certificate placeholder */}
-            <div className={styles.certPlaceholder}>
-              <div className={styles.certInner}>
-                <div className={styles.certHeader}>
-                  <span className={styles.certFlag}>🇮🇳</span>
-                  <p>DPIIT Certificate</p>
-                  <p className={styles.certSmall}>DIPP277439</p>
-                </div>
-                <div className={styles.certNote}>
-                  Certificate image to be provided by client
-                </div>
-              </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/images/dpiit-cert.jpeg"
+                alt="DPIIT Certificate DIPP277439"
+                width={400}
+                height={565}
+                className={styles.certImage}
+              />
             </div>
           </div>
         </motion.div>
