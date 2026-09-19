@@ -102,7 +102,7 @@ export default function ContactSection() {
               <>
                 <h3 className={styles.formTitle}>Send a Message</h3>
                 <form onSubmit={handleSubmit} className={styles.form}>
-                  <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "9fb48966-35ad-40a7-a339-824936f6f4a2"} />
+                  <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "e5d773a2-22b2-4580-8657-cf6606f22930"} />
                   <input type="hidden" name="subject" value="New Contact Request - AI Mentor Global" />
                   <input type="hidden" name="from_name" value="AI Mentor Global Website" />
                   

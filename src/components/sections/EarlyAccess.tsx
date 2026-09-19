@@ -23,7 +23,7 @@ export default function EarlyAccess() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "9fb48966-35ad-40a7-a339-824936f6f4a2",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "e5d773a2-22b2-4580-8657-cf6606f22930",
           subject: "New Early Access Registration - AI Mentor Global",
           from_name: "AI Mentor Global Website",
           name: form.name,
